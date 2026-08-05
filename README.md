@@ -8,7 +8,8 @@ index.html          ← the page
 app.jsx             ← page content & sections (edit this)
 harvestfest-ui.js   ← shared UI components (button, card, badge, schedule row)
 styles.css          ← brand colors, type, spacing
-assets/             ← logo, acorn/leaf marks, seal, photos
+assets/             ← logo, marks, seal, mascot, photos (one flat folder)
+.nojekyll           ← tells GitHub Pages to serve files as-is (don't delete)
 ```
 
 ## Publish to GitHub Pages
@@ -66,6 +67,31 @@ Commit the change and Pages redeploys automatically.
 
 - Photos are 1600px web-optimized copies. Full-resolution originals live outside
   this folder in the design system.
+
+## Troubleshooting: images not loading on GitHub Pages
+
+Almost always one of these:
+
+1. **The `assets` folder didn't get uploaded.** GitHub's drag-and-drop uploader
+   sometimes skips folders. Open your repo and confirm you see an `assets`
+   folder containing ~19 images next to `index.html`. If it's missing or empty,
+   open the `assets` folder locally, select **all the image files**, and drag
+   those into the repo with **Add file → Upload files**, then type `assets/`
+   into the "Name your file..." path box so they land in the right folder.
+   (Using `git push` from a terminal avoids this entirely.)
+2. **`.nojekyll` is missing.** Without it GitHub runs Jekyll, which can skip
+   files. It's an empty file — some tools hide it because it starts with a dot.
+   You can create it directly on GitHub: **Add file → Create new file**, name it
+   `.nojekyll`, leave it empty, commit.
+3. **Wrong folder selected in Pages settings.** Settings → Pages → Folder must be
+   `/ (root)` and `index.html` must sit at the repo root — not inside a
+   `site/` subfolder.
+4. **Still deploying.** First build takes a minute or two. Check the Actions tab
+   for a green check.
+
+To confirm what's wrong: load the page, right-click a broken image →
+**Open image in new tab**. A 404 means the file isn't at that path in the repo —
+compare the URL to where the file actually sits on GitHub.
 - The page compiles `app.jsx` in the browser, which keeps editing dead simple but
   adds a moment to first load. If you later want maximum speed, precompile
   `app.jsx` to plain JS and drop the Babel `<script>` tag.

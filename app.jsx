@@ -18,16 +18,16 @@
     const MASCOT_IMG = 'assets/mascot.png';
     const RATBOYS_IMG = 'assets/ratboys.jpeg';
     const PH = {
-      crowd: 'assets/web/photo-crowd.jpg',
-      family: 'assets/web/photo-family.jpg',
-      dogKid: 'assets/web/photo-dog-kid.jpg',
-      market: 'assets/web/photo-market.jpg',
-      stage: 'assets/web/photo-stage.jpg',
-      dogs: 'assets/web/photo-dogs.jpg',
-      pumpkins: 'assets/web/photo-pumpkins.jpg',
-      friends: 'assets/web/photo-friends.jpg',
-      food: 'assets/web/photo-food.jpg',
-      foodtruck: 'assets/web/photo-foodtruck.jpg',
+      crowd: 'assets/photo-crowd.jpg',
+      family: 'assets/photo-family.jpg',
+      dogKid: 'assets/photo-dog-kid.jpg',
+      market: 'assets/photo-market.jpg',
+      stage: 'assets/photo-stage.jpg',
+      dogs: 'assets/photo-dogs.jpg',
+      pumpkins: 'assets/photo-pumpkins.jpg',
+      friends: 'assets/photo-friends.jpg',
+      food: 'assets/photo-food.jpg',
+      foodtruck: 'assets/photo-foodtruck.jpg',
     };
 
     // Real calls-to-action
