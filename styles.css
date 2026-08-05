@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
+
+/* Hillcrest HarvestFest — consolidated design tokens */
+/* ============================================================
+   HARVESTFEST — COLOR TOKENS
+   Tight palette: pumpkin orange · warm slate · cream.
+   Sampled directly from the master logo artwork.
+   ============================================================ */
+
+:root {
+  /* ---- Brand core ---------------------------------------- */
+  --pumpkin: #E8713A;        /* primary — the logo orange */
+  --pumpkin-600: #D55F2B;    /* hover / pressed */
+  --pumpkin-700: #B84E20;    /* deep, for text on cream */
+  --pumpkin-300: #F0A074;    /* soft accent */
+  --pumpkin-100: #FBE5D6;    /* tint surface */
+  --pumpkin-50:  #FCF1E9;    /* faintest wash */
+
+  /* ---- Slate (warm charcoal) ----------------------------- */
+  --slate-900: #322E29;      /* darkest ink / deep bg */
+  --slate-800: #3C3833;
+  --slate-700: #4A453E;      /* primary ink — the "HILLCREST" gray */
+  --slate-500: #5B5650;
+  --slate-400: #837D74;      /* muted text */
+  --slate-300: #ABA59B;      /* disabled / hairlines on cream */
+  --slate-200: #D7D2C8;
+
+  /* ---- Cream / paper ------------------------------------- */
+  --cream:      #F6F1E8;     /* default page background */
+  --cream-deep: #EFE7D8;     /* alt section / sunken */
+  --paper:      #FFFFFF;     /* cards on cream */
+  --paper-cool: #F5F6F6;     /* logo artwork backdrop */
+
+  /* ---- Semantic aliases ---------------------------------- */
+  --bg-page:        var(--cream);
+  --bg-alt:         var(--cream-deep);
+  --bg-ink:         var(--slate-900);     /* dark sections */
+  --surface-card:   var(--paper);
+  --surface-tint:   var(--pumpkin-50);
+
+  --text-strong:    var(--slate-900);
+  --text-body:      var(--slate-700);
+  --text-muted:     var(--slate-400);
+  --text-on-ink:    var(--cream);
+  --text-on-pumpkin:var(--cream);
+  --text-brand:     var(--pumpkin);
+
+  --accent:         var(--pumpkin);
+  --accent-hover:   var(--pumpkin-600);
+  --accent-press:   var(--pumpkin-700);
+
+  --border-hair:    rgba(74, 69, 62, 0.16);   /* slate @ low alpha */
+  --border-strong:  var(--slate-700);
+  --border-brand:   var(--pumpkin);
+
+  --focus-ring:     rgba(232, 113, 58, 0.45);
+}
+
+
+/* ============================================================
+   HARVESTFEST — TYPOGRAPHY TOKENS
+   Two families only:
+   · Lobster   — the festival voice. Headlines, hero words, never body.
+   · Montserrat — geometric workhorse. Subheads, UI, body, captions.
+   ============================================================ */
+
+:root {
+  --font-script: 'Lobster', 'Brush Script MT', cursive;
+  --font-sans:   'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Display script (Lobster) — generous, loose */
+  --type-script-hero:   clamp(3rem, 7vw, 6rem);    /* hero festival word */
+  --type-script-xl:     3.25rem;
+  --type-script-lg:     2.25rem;
+  --type-script-md:     1.5rem;
+
+  /* Sans scale (Montserrat) */
+  --type-display:  2.75rem;   /* big sans headline */
+  --type-h1:       2rem;
+  --type-h2:       1.5rem;
+  --type-h3:       1.25rem;
+  --type-lg:       1.125rem;
+  --type-body:     1rem;
+  --type-sm:       0.875rem;
+  --type-xs:       0.75rem;
+
+  /* Weights */
+  --w-regular: 400;
+  --w-medium:  500;
+  --w-semibold:600;
+  --w-bold:    700;
+  --w-black:   800;
+
+  /* Line heights */
+  --lh-tight:   1.05;   /* script display */
+  --lh-snug:    1.2;    /* headings */
+  --lh-normal:  1.5;    /* body */
+  --lh-relaxed: 1.65;
+
+  /* Tracking — the brand's caps eyebrows are widely tracked */
+  --tracking-caps:  0.18em;   /* "in HILLCREST" style labels */
+  --tracking-wide:  0.06em;
+  --tracking-tight: -0.01em;
+}
+
+
+/* ============================================================
+   HARVESTFEST — SPACING & RADII TOKENS
+   8px base rhythm. Festival layouts breathe — lean generous.
+   ============================================================ */
+
+:root {
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  --gutter:        clamp(20px, 5vw, 64px);
+  --container-max: 1200px;
+  --container-text:680px;
+
+  /* Radii — friendly but not bubbly. Pills for actions. */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   18px;
+  --radius-xl:   28px;
+  --radius-pill: 999px;
+
+  /* Control sizing */
+  --control-h:    48px;
+  --control-h-sm: 38px;
+  --tap-min:      44px;
+}
+
+
+/* ============================================================
+   HARVESTFEST — EFFECTS: shadow, border, motion
+   Warm, soft, tactile. Shadows tinted with slate-brown, never
+   pure black. Motion is bouncy-friendly but quick.
+   ============================================================ */
+
+:root {
+  /* Elevation — shadows tinted warm */
+  --shadow-sm:  0 1px 2px rgba(50, 46, 41, 0.08);
+  --shadow-md:  0 4px 14px rgba(50, 46, 41, 0.10);
+  --shadow-lg:  0 12px 34px rgba(50, 46, 41, 0.14);
+  --shadow-brand: 0 10px 24px rgba(232, 113, 58, 0.30);
+
+  /* Borders */
+  --border-1: 1px solid var(--border-hair);
+  --border-2: 2px solid var(--slate-700);
+  --border-brand-2: 2px solid var(--pumpkin);
+
+  /* Motion */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast:   140ms;
+  --dur-med:    240ms;
+  --dur-slow:   420ms;
+
+  /* Focus */
+  --focus-shadow: 0 0 0 3px var(--focus-ring);
+
+  /* A subtle paper texture vignette for hero blocks */
+  --hero-vignette: radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,0.10), rgba(50,46,41,0.0) 60%);
+}

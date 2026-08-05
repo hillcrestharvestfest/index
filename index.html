@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hillcrest HarvestFest · Sat, Oct 17 2026 · Little Rock, AR</title>
+<meta name="description" content="Hillcrest HarvestFest — Saturday, October 17, 2026, 11am–7pm on Kavanaugh Blvd in Little Rock. Free to attend. Ratboys headline the Lost Forty Stage at 6pm. Dog show, Kids Zone, 12 food trucks, 6 SIP stations.">
+<link rel="icon" href="assets/seal-color.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hillcrest HarvestFest · Oct 17, 2026">
+<meta property="og:description" content="The best day in Hillcrest. Free festival on Kavanaugh Blvd — Ratboys headline at 6pm.">
+<meta property="og:image" content="assets/web/photo-crowd.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="styles.css">
+
+<script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
+<script src="https://unpkg.com/lucide@0.417.0"></script>
+<script src="harvestfest-ui.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-sans); background: var(--cream); color: var(--text-body); }
+  a { color: var(--pumpkin-700); }
+  a:hover { color: var(--pumpkin); }
+  ::selection { background: var(--pumpkin); color: var(--cream); }
+  .ico { width: 20px; height: 20px; stroke-width: 2; }
+  img { max-width: 100%; }
+  @media (max-width: 860px) {
+    #root [style*="repeat(4,1fr)"] { grid-template-columns: repeat(2,1fr) !important; }
+    #root [style*="repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+    #root [style*="repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+    #root [style*="1.1fr 1fr"] { grid-template-columns: 1fr !important; }
+    #root [style*="1fr 1fr"] { grid-template-columns: 1fr !important; }
+    #root nav { display: none !important; }
+  }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    (async function () {
+      const src = await (await fetch('app.jsx')).text();
+      const code = Babel.transform(src, { presets: [['react', { runtime: 'classic' }]] }).code;
+      window.eval(code);
+      if (window.lucide) window.lucide.createIcons();
+    })();
+  </script>
+</body>
+</html>
